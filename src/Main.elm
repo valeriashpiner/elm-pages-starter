@@ -3,7 +3,6 @@ module Main exposing (main)
 import Color
 import Data.Author as Author
 import Date
-import DocumentSvg
 import Element exposing (Element)
 import Element.Background
 import Element.Border
@@ -34,12 +33,12 @@ manifest =
     , categories = [ Pages.Manifest.Category.education ]
     , displayMode = Manifest.Standalone
     , orientation = Manifest.Portrait
-    , description = "elm-pages-starter - A statically typed site generator."
+    , description = "unicorns & me - React Girl's Blog"
     , iarcRatingId = Nothing
-    , name = "elm-pages-starter"
+    , name = "unicorns & me"
     , themeColor = Just Color.white
     , startUrl = pages.index
-    , shortName = Just "elm-pages-starter"
+    , shortName = Just "unicorns & me"
     , sourceIcon = images.iconPng
     }
 
@@ -225,8 +224,8 @@ header currentPath =
             , Element.Background.gradient
                 { angle = 0.2
                 , steps =
-                    [ Element.rgb255 0 242 96
-                    , Element.rgb255 5 117 230
+                    [ Element.rgb255 255 191 224
+                    , Element.rgb255 191 217 254
                     ]
                 }
             ]
@@ -243,14 +242,18 @@ header currentPath =
                 { url = "/"
                 , label =
                     Element.row [ Font.size 30, Element.spacing 16 ]
-                        [ DocumentSvg.view
-                        , Element.text "elm-pages-starter"
+                        [ Element.image
+                            [ Element.width (Element.px 64)
+
+                            -- , Font.color Palette.color.primary
+                            ]
+                            { src = ImagePath.toString Pages.images.iconPng, description = "Logo" }
+                        , Element.text "unicorns & me"
                         ]
                 }
             , Element.row [ Element.spacing 15 ]
-                [ elmDocsLink
-                , githubRepoLink
-                , highlightableLink currentPath pages.blog.directory "Blog"
+                [ twitterLink
+                , telegramLink
                 ]
             ]
         ]
@@ -291,7 +294,7 @@ head metadata =
         Metadata.Page meta ->
             Seo.summaryLarge
                 { canonicalUrlOverride = Nothing
-                , siteName = "elm-pages-starter"
+                , siteName = "unicorns & me"
                 , image =
                     { url = images.iconPng
                     , alt = "elm-pages logo"
@@ -344,7 +347,7 @@ head metadata =
             in
             Seo.summary
                 { canonicalUrlOverride = Nothing
-                , siteName = "elm-pages-starter"
+                , siteName = "unicorns & me"
                 , image =
                     { url = meta.avatar
                     , alt = meta.name ++ "'s elm-pages articles."
@@ -380,12 +383,12 @@ head metadata =
 
 canonicalSiteUrl : String
 canonicalSiteUrl =
-    "https://elm-pages-starter.netlify.com/"
+    "https://unicornsandme.netlify.com/"
 
 
 siteTagline : String
 siteTagline =
-    "Starter blog for elm-pages"
+    "unicorns & me"
 
 
 publishedDateView metadata =
@@ -395,27 +398,27 @@ publishedDateView metadata =
         )
 
 
-githubRepoLink : Element msg
-githubRepoLink =
+telegramLink : Element msg
+telegramLink =
     Element.newTabLink []
-        { url = "https://github.com/dillonkearns/elm-pages"
+        { url = "https://t.me/unicornsandme"
         , label =
             Element.image
-                [ Element.width (Element.px 22)
+                [ Element.width (Element.px 32)
                 , Font.color Palette.color.primary
                 ]
-                { src = ImagePath.toString Pages.images.github, description = "Github repo" }
+                { src = ImagePath.toString Pages.images.telegramLogo, description = "Telegram chanel" }
         }
 
 
-elmDocsLink : Element msg
-elmDocsLink =
+twitterLink : Element msg
+twitterLink =
     Element.newTabLink []
-        { url = "https://package.elm-lang.org/packages/dillonkearns/elm-pages/latest/"
+        { url = "https://twitter.com/react_girl"
         , label =
             Element.image
-                [ Element.width (Element.px 22)
+                [ Element.width (Element.px 32)
                 , Font.color Palette.color.primary
                 ]
-                { src = ImagePath.toString Pages.images.elmLogo, description = "Elm Package Docs" }
+                { src = ImagePath.toString Pages.images.twitterLogo, description = "Twitter Link" }
         }

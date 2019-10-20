@@ -7,7 +7,7 @@
     "serve": "npm run build && http-server ./dist -a localhost -p 3000 -c-1",
     "build": "elm-pages build"
   },
-  "author": "Lera",
+  "author": "React Girl",
   "license": "BSD-3",
   "dependencies": {
     "highlight.js": "^9.15.10",

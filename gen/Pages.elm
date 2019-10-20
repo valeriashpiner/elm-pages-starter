@@ -76,15 +76,13 @@ application config =
 allPages : List (PagePath PathKey)
 allPages =
     [ (buildPage [ "blog", "hello" ])
-    , (buildPage [ "blog" ])
     , (buildPage [  ])
     ]
 
 pages =
     { blog =
         { hello = (buildPage [ "blog", "hello" ])
-        , index = (buildPage [ "blog" ])
-        , directory = directoryWithIndex ["blog"]
+        , directory = directoryWithoutIndex ["blog"]
         }
     , index = (buildPage [  ])
     , directory = directoryWithIndex []
@@ -92,30 +90,28 @@ pages =
 
 images =
     { articleCovers =
-        { hello = (buildImage [ "article-covers", "hello.jpg" ])
-        , mountains = (buildImage [ "article-covers", "mountains.jpg" ])
+        { hello = (buildImage [ "article-covers", "hello.png" ])
         , directory = directoryWithoutIndex ["articleCovers"]
         }
     , author =
-        { dillon = (buildImage [ "author", "dillon.jpg" ])
+        { valeria = (buildImage [ "author", "valeria.png" ])
         , directory = directoryWithoutIndex ["author"]
         }
-    , elmLogo = (buildImage [ "elm-logo.svg" ])
-    , github = (buildImage [ "github.svg" ])
     , iconPng = (buildImage [ "icon-png.png" ])
     , icon = (buildImage [ "icon.svg" ])
+    , telegramLogo = (buildImage [ "telegram-logo.svg" ])
+    , twitterLogo = (buildImage [ "twitter-logo.svg" ])
     , directory = directoryWithoutIndex []
     }
 
 allImages : List (ImagePath PathKey)
 allImages =
-    [(buildImage [ "article-covers", "hello.jpg" ])
-    , (buildImage [ "article-covers", "mountains.jpg" ])
-    , (buildImage [ "author", "dillon.jpg" ])
-    , (buildImage [ "elm-logo.svg" ])
-    , (buildImage [ "github.svg" ])
+    [(buildImage [ "article-covers", "hello.png" ])
+    , (buildImage [ "author", "valeria.png" ])
     , (buildImage [ "icon-png.png" ])
     , (buildImage [ "icon.svg" ])
+    , (buildImage [ "telegram-logo.svg" ])
+    , (buildImage [ "twitter-logo.svg" ])
     ]
 
 
@@ -144,19 +140,13 @@ content : List ( List String, { extension: String, frontMatter : String, body : 
 content =
     [ 
   ( ["blog", "hello"]
-    , { frontMatter = """{"type":"blog","author":"Lera","title":"My first post","description":"blah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blah","image":"/images/article-covers/hello.jpg","published":"2019-10-20"}
-""" , body = Nothing
-    , extension = "md"
-    } )
-  ,
-  ( ["blog"]
-    , { frontMatter = """{"title":"elm-pages blog","type":"blog-index"}
+    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Hello, world!","description":"C вами на связи с французских земель Канады React Girl и вы в блоге unicorns&me.","image":"/images/article-covers/hello.png","published":"2019-10-20"}
 """ , body = Nothing
     , extension = "md"
     } )
   ,
   ( []
-    , { frontMatter = """{"title":"elm-pages-starter - a simple blog starter","type":"page"}
+    , { frontMatter = """{"title":"elm-pages blog","type":"blog-index"}
 """ , body = Nothing
     , extension = "md"
     } )

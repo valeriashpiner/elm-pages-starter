@@ -63,6 +63,7 @@ title text =
             , Element.Font.family [ Element.Font.typeface "Raleway" ]
             , Element.Font.semiBold
             , Element.padding 16
+            , Element.Font.color (Element.rgba255 238 156 167 1)
             ]
 
 
@@ -74,9 +75,9 @@ articleIndex metadata =
         , Element.padding 40
         , Element.spacing 10
         , Element.Border.width 1
-        , Element.Border.color (Element.rgba255 0 0 0 0.1)
+        , Element.Border.color (Element.rgba255 238 156 167 0.1)
         , Element.mouseOver
-            [ Element.Border.color (Element.rgba255 0 0 0 1)
+            [ Element.Border.color (Element.rgba255 238 156 167 0.5)
             ]
         ]
         (postPreview metadata)
@@ -91,6 +92,7 @@ readMoreLink =
             , Element.mouseOver [ Element.alpha 1 ]
             , Element.Font.underline
             , Element.Font.center
+            , Element.Font.color (Element.rgba255 238 156 167 1)
             ]
 
 
