@@ -75,16 +75,14 @@ application config =
 
 allPages : List (PagePath PathKey)
 allPages =
-    [ (buildPage [ "blog", "draft" ])
-    , (buildPage [ "blog", "hello" ])
+    [ (buildPage [ "blog", "hello" ])
     , (buildPage [ "blog" ])
     , (buildPage [  ])
     ]
 
 pages =
     { blog =
-        { draft = (buildPage [ "blog", "draft" ])
-        , hello = (buildPage [ "blog", "hello" ])
+        { hello = (buildPage [ "blog", "hello" ])
         , index = (buildPage [ "blog" ])
         , directory = directoryWithIndex ["blog"]
         }
@@ -145,14 +143,8 @@ isValidRoute route =
 content : List ( List String, { extension: String, frontMatter : String, body : Maybe String } )
 content =
     [ 
-  ( ["blog", "draft"]
-    , { frontMatter = """{"type":"blog","author":"Dillon Kearns","title":"A Draft Blog Post","description":"I'm not quite ready to share this post with the world","image":"/images/article-covers/mountains.jpg","draft":true,"published":"2019-09-21"}
-""" , body = Nothing
-    , extension = "md"
-    } )
-  ,
   ( ["blog", "hello"]
-    , { frontMatter = """{"type":"blog","author":"Dillon Kearns","title":"Hello `elm-pages`! 🚀","description":"Here's an intro for my blog post to get you interested in reading more...","image":"/images/article-covers/hello.jpg","published":"2019-09-21"}
+    , { frontMatter = """{"type":"blog","author":"Lera","title":"My first post","description":"blah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blah","image":"/images/article-covers/hello.jpg","published":"2019-10-20"}
 """ , body = Nothing
     , extension = "md"
     } )
