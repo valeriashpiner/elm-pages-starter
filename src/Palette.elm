@@ -15,18 +15,18 @@ heading : Int -> List (Element msg) -> Element msg
 heading level content =
     Element.paragraph
         ([ Font.bold
-         , Font.family [ Font.typeface "Raleway" ]
+         , Font.family [ Font.typeface "Didact Gothic" ]
          , Element.Region.heading level
          ]
             ++ (case level of
                     1 ->
-                        [ Font.size 36 ]
+                        [ Font.size 26 ]
 
                     2 ->
-                        [ Font.size 24 ]
+                        [ Font.size 22 ]
 
                     _ ->
-                        [ Font.size 20 ]
+                        [ Font.size 18 ]
                )
         )
         content
@@ -36,7 +36,7 @@ blogHeading : String -> Element msg
 blogHeading title =
     Element.paragraph
         [ Font.bold
-        , Font.family [ Font.typeface "Raleway" ]
+        , Font.family [ Font.typeface "Didact Gothic" ]
         , Element.Region.heading 1
         , Font.size 36
         , Font.center

@@ -117,8 +117,8 @@ view model siteMetadata page =
         body
             |> Element.layout
                 [ Element.width Element.fill
-                , Font.size 20
-                , Font.family [ Font.typeface "Roboto" ]
+                , Font.size 18
+                , Font.family [ Font.typeface "Didact Gothic" ]
                 , Font.color (Element.rgba255 0 0 0 0.8)
                 ]
     }
@@ -160,7 +160,7 @@ pageView model siteMetadata page =
                             [ Element.row [ Element.spacing 10 ]
                                 [ Author.view [] metadata.author
                                 , Element.column [ Element.spacing 10, Element.width Element.fill ]
-                                    [ Element.paragraph [ Font.bold, Font.size 24 ]
+                                    [ Element.paragraph [ Font.bold, Font.size 20 ]
                                         [ Element.text metadata.author.name
                                         ]
                                     , Element.paragraph [ Font.size 16 ]
@@ -198,11 +198,12 @@ pageView model siteMetadata page =
             }
 
         Metadata.BlogIndex ->
-            { title = "elm-pages blog"
+            { title = "unicorns & me"
             , body =
-                Element.column [ Element.width Element.fill ]
+                Element.column [ Element.width Element.fill, Element.htmlAttribute (Attr.class "body") ]
                     [ header page.path
-                    , Element.column [ Element.padding 20, Element.centerX ] [ Index.view siteMetadata ]
+                    , Element.column [ Element.padding 0, Element.centerX, Element.padding 10 ] [ Index.view siteMetadata ]
+                    , footer
                     ]
             }
 
@@ -235,17 +236,13 @@ header currentPath =
             , Element.spaceEvenly
             , Element.width Element.fill
             , Element.Region.navigation
-            , Element.Border.widthEach { bottom = 1, left = 0, right = 0, top = 0 }
-            , Element.Border.color (Element.rgba255 40 80 40 0.4)
             ]
             [ Element.link []
                 { url = "/"
                 , label =
-                    Element.row [ Font.size 30, Element.spacing 16 ]
+                    Element.row [ Font.size 20, Element.spacing 16 ]
                         [ Element.image
-                            [ Element.width (Element.px 64)
-
-                            -- , Font.color Palette.color.primary
+                            [ Element.width (Element.px 44)
                             ]
                             { src = ImagePath.toString Pages.images.iconPng, description = "Logo" }
                         , Element.text "unicorns & me"
@@ -283,11 +280,6 @@ highlightableLink currentPath linkDirectory displayName =
         }
 
 
-{-| <https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards>
-<https://htmlhead.dev>
-<https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names>
-<https://ogp.me/>
--}
 head : Metadata -> List (Head.Tag Pages.PathKey)
 head metadata =
     case metadata of
@@ -404,7 +396,7 @@ telegramLink =
         { url = "https://t.me/unicornsandme"
         , label =
             Element.image
-                [ Element.width (Element.px 32)
+                [ Element.width (Element.px 24)
                 , Font.color Palette.color.primary
                 ]
                 { src = ImagePath.toString Pages.images.telegramLogo, description = "Telegram chanel" }
@@ -417,8 +409,20 @@ twitterLink =
         { url = "https://twitter.com/react_girl"
         , label =
             Element.image
-                [ Element.width (Element.px 32)
+                [ Element.width (Element.px 24)
                 , Font.color Palette.color.primary
                 ]
                 { src = ImagePath.toString Pages.images.twitterLogo, description = "Twitter Link" }
         }
+
+
+footer =
+    Element.text "Created with Elm and 💛 by React Girl"
+        |> Element.el
+            [ Element.centerX
+            , Font.size 16
+            , Element.alpha 0.6
+            , Font.center
+            , Font.color (Element.rgba255 0 0 0 1)
+            , Element.htmlAttribute (Attr.class "footer")
+            ]

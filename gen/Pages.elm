@@ -75,14 +75,14 @@ application config =
 
 allPages : List (PagePath PathKey)
 allPages =
-    [ (buildPage [ "blog", "hello" ])
+    [ (buildPage [ "article", "hello" ])
     , (buildPage [  ])
     ]
 
 pages =
-    { blog =
-        { hello = (buildPage [ "blog", "hello" ])
-        , directory = directoryWithoutIndex ["blog"]
+    { article =
+        { hello = (buildPage [ "article", "hello" ])
+        , directory = directoryWithoutIndex ["article"]
         }
     , index = (buildPage [  ])
     , directory = directoryWithIndex []
@@ -139,8 +139,8 @@ isValidRoute route =
 content : List ( List String, { extension: String, frontMatter : String, body : Maybe String } )
 content =
     [ 
-  ( ["blog", "hello"]
-    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Hello, world!","description":"C вами на связи с французских земель Канады React Girl и вы в блоге unicorns&me.","image":"/images/article-covers/hello.png","published":"2019-10-20"}
+  ( ["article", "hello"]
+    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Hello, world!","description":"C вами на связи с французских земель Канады React Girl и вы в блоге unicorns&me. Этот блог - моя территория, где я описываю, как я ставлю себе цели и достигаю их, а также это перенос и продолжение моего большого треда в твиттере о том, как я учу французский язык...","image":"/images/article-covers/hello.png","published":"2019-10-20"}
 """ , body = Nothing
     , extension = "md"
     } )

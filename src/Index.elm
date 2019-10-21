@@ -3,8 +3,10 @@ module Index exposing (view)
 import Data.Author
 import Date
 import Element exposing (Element)
+import Element.Background
 import Element.Border
 import Element.Font
+import Html.Attributes as Attr
 import Metadata exposing (Metadata)
 import Pages
 import Pages.PagePath as PagePath exposing (PagePath)
@@ -15,7 +17,7 @@ view :
     List ( PagePath Pages.PathKey, Metadata )
     -> Element msg
 view posts =
-    Element.column [ Element.spacing 20 ]
+    Element.column [ Element.spacing 10 ]
         (posts
             |> List.filterMap
                 (\( path, metadata ) ->
@@ -58,12 +60,12 @@ title : String -> Element msg
 title text =
     [ Element.text text ]
         |> Element.paragraph
-            [ Element.Font.size 36
+            [ Element.Font.size 26
             , Element.Font.center
-            , Element.Font.family [ Element.Font.typeface "Raleway" ]
+            , Element.Font.family [ Element.Font.typeface "Didact Gothic" ]
             , Element.Font.semiBold
             , Element.padding 16
-            , Element.Font.color (Element.rgba255 238 156 167 1)
+            , Element.Font.color (Element.rgba255 0 0 0 0.7)
             ]
 
 
@@ -71,14 +73,11 @@ articleIndex : Metadata.ArticleMetadata -> Element msg
 articleIndex metadata =
     Element.el
         [ Element.centerX
-        , Element.width (Element.maximum 800 Element.fill)
-        , Element.padding 40
+        , Element.width (Element.maximum 700 Element.fill)
+        , Element.padding 30
         , Element.spacing 10
-        , Element.Border.width 1
-        , Element.Border.color (Element.rgba255 238 156 167 0.1)
-        , Element.mouseOver
-            [ Element.Border.color (Element.rgba255 238 156 167 0.5)
-            ]
+        , Element.Border.rounded 15
+        , Element.htmlAttribute (Attr.class "article")
         ]
         (postPreview metadata)
 
@@ -87,12 +86,11 @@ readMoreLink =
     Element.text "Continue reading >>"
         |> Element.el
             [ Element.centerX
-            , Element.Font.size 18
+            , Element.Font.size 16
             , Element.alpha 0.6
-            , Element.mouseOver [ Element.alpha 1 ]
             , Element.Font.underline
             , Element.Font.center
-            , Element.Font.color (Element.rgba255 238 156 167 1)
+            , Element.Font.color (Element.rgba255 0 0 0 1)
             ]
 
 
@@ -101,8 +99,8 @@ postPreview post =
     Element.textColumn
         [ Element.centerX
         , Element.width Element.fill
-        , Element.spacing 30
-        , Element.Font.size 18
+        , Element.spacing 15
+        , Element.Font.size 14
         ]
         [ title post.title
         , Element.row [ Element.spacing 10, Element.centerX ]
@@ -115,9 +113,9 @@ postPreview post =
             |> Element.text
             |> List.singleton
             |> Element.paragraph
-                [ Element.Font.size 22
+                [ Element.Font.size 20
                 , Element.Font.center
-                , Element.Font.family [ Element.Font.typeface "Raleway" ]
+                , Element.Font.family [ Element.Font.typeface "Didact Gothic" ]
                 ]
         , readMoreLink
         ]
