@@ -76,12 +76,14 @@ application config =
 allPages : List (PagePath PathKey)
 allPages =
     [ (buildPage [ "article", "hello" ])
+    , (buildPage [ "article", "how-to-memorize-better" ])
     , (buildPage [  ])
     ]
 
 pages =
     { article =
         { hello = (buildPage [ "article", "hello" ])
+        , howToMemorizeBetter = (buildPage [ "article", "how-to-memorize-better" ])
         , directory = directoryWithoutIndex ["article"]
         }
     , index = (buildPage [  ])
@@ -91,6 +93,7 @@ pages =
 images =
     { articleCovers =
         { hello = (buildImage [ "article-covers", "hello.png" ])
+        , howToMemorizeBetter = (buildImage [ "article-covers", "how-to-memorize-better.jpeg" ])
         , directory = directoryWithoutIndex ["articleCovers"]
         }
     , author =
@@ -107,6 +110,7 @@ images =
 allImages : List (ImagePath PathKey)
 allImages =
     [(buildImage [ "article-covers", "hello.png" ])
+    , (buildImage [ "article-covers", "how-to-memorize-better.jpeg" ])
     , (buildImage [ "author", "valeria.png" ])
     , (buildImage [ "icon-png.png" ])
     , (buildImage [ "icon.svg" ])
@@ -140,7 +144,13 @@ content : List ( List String, { extension: String, frontMatter : String, body : 
 content =
     [ 
   ( ["article", "hello"]
-    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Hello, world!","description":"C вами на связи с французских земель Канады React Girl и вы в блоге unicorns&me. Этот блог - моё пространство, где я описываю, как я ставлю себе цели и достигаю их, а также это перенос и продолжение моего большого треда в твиттере о том, как я учу французский язык...","image":"/images/article-covers/hello.png","published":"2019-10-20"}
+    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Hello, world!","description":"C вами на связи с французских земель Канады React Girl и вы в блоге unicorns&me. Этот блог - моё пространство, где я описываю, как я ставлю себе цели и достигаю их, а также это перенос и продолжение моего большого треда в твиттере о том, как я учу французский язык.","image":"/images/article-covers/hello.png","published":"2019-10-20"}
+""" , body = Nothing
+    , extension = "md"
+    } )
+  ,
+  ( ["article", "how-to-memorize-better"]
+    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ How to memorize better","description":"Сегодня мы с вами поговорим о том, как лучше запоминать иностранные слова.","image":"/images/article-covers/how-to-memorize-better.jpeg","published":"2019-10-20"}
 """ , body = Nothing
     , extension = "md"
     } )
