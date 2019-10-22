@@ -62,7 +62,7 @@ title text =
         |> Element.paragraph
             [ Element.Font.size 26
             , Element.Font.center
-            , Element.Font.family [ Element.Font.typeface "Didact Gothic" ]
+            , Element.Font.family [ Element.Font.typeface "Montserrat" ]
             , Element.Font.semiBold
             , Element.padding 16
             , Element.Font.color (Element.rgba255 0 0 0 0.7)
@@ -113,9 +113,9 @@ postPreview post =
             |> Element.text
             |> List.singleton
             |> Element.paragraph
-                [ Element.Font.size 20
+                [ Element.Font.size 16
                 , Element.Font.center
-                , Element.Font.family [ Element.Font.typeface "Didact Gothic" ]
+                , Element.Font.family [ Element.Font.typeface "Montserrat" ]
                 ]
         , readMoreLink
         ]

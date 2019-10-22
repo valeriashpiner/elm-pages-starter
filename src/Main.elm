@@ -117,8 +117,8 @@ view model siteMetadata page =
         body
             |> Element.layout
                 [ Element.width Element.fill
-                , Font.size 18
-                , Font.family [ Font.typeface "Didact Gothic" ]
+                , Font.size 16
+                , Font.family [ Font.typeface "Montserrat" ]
                 , Font.color (Element.rgba255 0 0 0 0.8)
                 ]
     }
@@ -160,7 +160,7 @@ pageView model siteMetadata page =
                             [ Element.row [ Element.spacing 10 ]
                                 [ Author.view [] metadata.author
                                 , Element.column [ Element.spacing 10, Element.width Element.fill ]
-                                    [ Element.paragraph [ Font.bold, Font.size 20 ]
+                                    [ Element.paragraph [ Font.bold, Font.size 16 ]
                                         [ Element.text metadata.author.name
                                         ]
                                     , Element.paragraph [ Font.size 16 ]
@@ -240,7 +240,7 @@ header currentPath =
             [ Element.link []
                 { url = "/"
                 , label =
-                    Element.row [ Font.size 20, Element.spacing 16 ]
+                    Element.row [ Font.size 16, Element.spacing 14 ]
                         [ Element.image
                             [ Element.width (Element.px 44)
                             ]
