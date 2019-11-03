@@ -420,9 +420,10 @@ footer =
     Element.text "Created with Elm and 💛 by React Girl"
         |> Element.el
             [ Element.centerX
+            , Element.Region.footer
             , Font.size 16
             , Element.alpha 0.6
-            , Element.padding 10
+            , Element.padding 20
             , Font.center
             , Font.color (Element.rgba255 0 0 0 1)
             , Element.htmlAttribute (Attr.class "footer")
