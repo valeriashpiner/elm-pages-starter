@@ -77,6 +77,7 @@ allPages : List (PagePath PathKey)
 allPages =
     [ (buildPage [ "article", "hello" ])
     , (buildPage [ "article", "how-to-memorize-better" ])
+    , (buildPage [ "article", "spaced-repetition" ])
     , (buildPage [  ])
     ]
 
@@ -84,6 +85,7 @@ pages =
     { article =
         { hello = (buildPage [ "article", "hello" ])
         , howToMemorizeBetter = (buildPage [ "article", "how-to-memorize-better" ])
+        , spacedRepetition = (buildPage [ "article", "spaced-repetition" ])
         , directory = directoryWithoutIndex ["article"]
         }
     , index = (buildPage [  ])
@@ -94,6 +96,7 @@ images =
     { articleCovers =
         { hello = (buildImage [ "article-covers", "hello.png" ])
         , howToMemorizeBetter = (buildImage [ "article-covers", "how-to-memorize-better.jpeg" ])
+        , spacedRepetition = (buildImage [ "article-covers", "spaced-repetition.png" ])
         , directory = directoryWithoutIndex ["articleCovers"]
         }
     , author =
@@ -111,6 +114,7 @@ allImages : List (ImagePath PathKey)
 allImages =
     [(buildImage [ "article-covers", "hello.png" ])
     , (buildImage [ "article-covers", "how-to-memorize-better.jpeg" ])
+    , (buildImage [ "article-covers", "spaced-repetition.png" ])
     , (buildImage [ "author", "valeria.png" ])
     , (buildImage [ "icon-png.png" ])
     , (buildImage [ "icon.svg" ])
@@ -151,6 +155,12 @@ content =
   ,
   ( ["article", "how-to-memorize-better"]
     , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ How to memorize better","description":"Сегодня мы с вами поговорим о том, как лучше запоминать иностранные слова.","image":"/images/article-covers/how-to-memorize-better.jpeg","published":"2019-10-20"}
+""" , body = Nothing
+    , extension = "md"
+    } )
+  ,
+  ( ["article", "spaced-repetition"]
+    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Spaced Repetition","description":"Spaced Repetition - это мощный инструмент в изучении нового материала. Читайте дальше о том, что это за эффект и как с этим связан наш мозг.","image":"/images/article-covers/spaced-repetition.png","published":"2019-10-20"}
 """ , body = Nothing
     , extension = "md"
     } )
