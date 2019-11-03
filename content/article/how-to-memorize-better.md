@@ -5,7 +5,7 @@
   "title": "✨ How to memorize better",
   "description": "Сегодня мы с вами поговорим о том, как лучше запоминать иностранные слова.",
   "image": "/images/article-covers/how-to-memorize-better.jpeg",
-  "published": "2019-10-20",
+  "published": "2019-10-22",
 }
 ---
 

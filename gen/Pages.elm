@@ -154,13 +154,13 @@ content =
     } )
   ,
   ( ["article", "how-to-memorize-better"]
-    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ How to memorize better","description":"Сегодня мы с вами поговорим о том, как лучше запоминать иностранные слова.","image":"/images/article-covers/how-to-memorize-better.jpeg","published":"2019-10-20"}
+    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ How to memorize better","description":"Сегодня мы с вами поговорим о том, как лучше запоминать иностранные слова.","image":"/images/article-covers/how-to-memorize-better.jpeg","published":"2019-10-22"}
 """ , body = Nothing
     , extension = "md"
     } )
   ,
   ( ["article", "spaced-repetition"]
-    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Spaced Repetition","description":"Spaced Repetition - это мощный инструмент в изучении нового материала. Читайте дальше о том, что это за эффект и как с этим связан наш мозг.","image":"/images/article-covers/spaced-repetition.png","published":"2019-10-20"}
+    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Spaced Repetition","description":"Spaced Repetition - это мощный инструмент в изучении нового материала. Читайте дальше о том, что это за эффект и как с этим связан наш мозг.","image":"/images/article-covers/spaced-repetition.png","published":"2019-11-03"}
 """ , body = Nothing
     , extension = "md"
     } )

@@ -422,6 +422,7 @@ footer =
             [ Element.centerX
             , Font.size 16
             , Element.alpha 0.6
+            , Element.padding 10
             , Font.center
             , Font.color (Element.rgba255 0 0 0 1)
             , Element.htmlAttribute (Attr.class "footer")

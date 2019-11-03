@@ -19,6 +19,7 @@ view :
 view posts =
     Element.column [ Element.spacing 10 ]
         (posts
+            |> List.reverse
             |> List.filterMap
                 (\( path, metadata ) ->
                     case metadata of
