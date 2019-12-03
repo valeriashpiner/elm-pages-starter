@@ -75,19 +75,19 @@ application config =
 
 allPages : List (PagePath PathKey)
 allPages =
-    [ (buildPage [ "article", "a1-hello" ])
-    , (buildPage [ "article", "a2-how-to-memorize-better" ])
-    , (buildPage [ "article", "a3-spaced-repetition" ])
-    , (buildPage [ "article", "a4-how-to-manage-your-study" ])
+    [ (buildPage [ "article", "a4-how-to-manage-your-study" ])
+    , (buildPage [ "article", "hello" ])
+    , (buildPage [ "article", "how-to-memorize-better" ])
+    , (buildPage [ "article", "spaced-repetition" ])
     , (buildPage [  ])
     ]
 
 pages =
     { article =
-        { a1Hello = (buildPage [ "article", "a1-hello" ])
-        , a2HowToMemorizeBetter = (buildPage [ "article", "a2-how-to-memorize-better" ])
-        , a3SpacedRepetition = (buildPage [ "article", "a3-spaced-repetition" ])
-        , a4HowToManageYourStudy = (buildPage [ "article", "a4-how-to-manage-your-study" ])
+        { a4HowToManageYourStudy = (buildPage [ "article", "a4-how-to-manage-your-study" ])
+        , hello = (buildPage [ "article", "hello" ])
+        , howToMemorizeBetter = (buildPage [ "article", "how-to-memorize-better" ])
+        , spacedRepetition = (buildPage [ "article", "spaced-repetition" ])
         , directory = directoryWithoutIndex ["article"]
         }
     , index = (buildPage [  ])
@@ -151,26 +151,26 @@ isValidRoute route =
 content : List ( List String, { extension: String, frontMatter : String, body : Maybe String } )
 content =
     [ 
-  ( ["article", "a1-hello"]
+  ( ["article", "a4-how-to-manage-your-study"]
+    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ How to manage your study","description":"Правильное планирование - это мотивация, успешное обучение и сохранение сил. Читай 🖤","image":"/images/article-covers/how-to-manage-your-study.png","published":"2019-12-02"}
+""" , body = Nothing
+    , extension = "md"
+    } )
+  ,
+  ( ["article", "hello"]
     , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Hello, world!","description":"C вами на связи с французских земель Канады React Girl и вы в блоге unicorns&me. Этот блог - моё пространство, где я описываю, как я ставлю себе цели и достигаю их, а также это перенос и продолжение моего большого треда в твиттере о том, как я учу французский язык.","image":"/images/article-covers/hello.png","published":"2019-10-20"}
 """ , body = Nothing
     , extension = "md"
     } )
   ,
-  ( ["article", "a2-how-to-memorize-better"]
+  ( ["article", "how-to-memorize-better"]
     , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ How to memorize better","description":"Сегодня мы с вами поговорим о том, как лучше запоминать иностранные слова.","image":"/images/article-covers/how-to-memorize-better.jpeg","published":"2019-10-22"}
 """ , body = Nothing
     , extension = "md"
     } )
   ,
-  ( ["article", "a3-spaced-repetition"]
+  ( ["article", "spaced-repetition"]
     , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ Spaced Repetition","description":"Spaced Repetition - это мощный инструмент в изучении нового материала. Читайте дальше о том, что это за эффект и как с этим связан наш мозг.","image":"/images/article-covers/spaced-repetition.png","published":"2019-11-03"}
-""" , body = Nothing
-    , extension = "md"
-    } )
-  ,
-  ( ["article", "a4-how-to-manage-your-study"]
-    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨ How to manage your study","description":"Правильное планирование - это мотивация, успешное обучение и сохранение сил. Читай 🖤","image":"/images/article-covers/how-to-manage-your-study.png","published":"2019-12-02"}
 """ , body = Nothing
     , extension = "md"
     } )
