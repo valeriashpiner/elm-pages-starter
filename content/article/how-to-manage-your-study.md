@@ -2,7 +2,7 @@
 {
   "type": "blog",
   "author": "React Girl",
-  "title": "✨ How to manage your study",
+  "title": "✨How to manage your study",
   "description": "Правильное планирование - это мотивация, успешное обучение и сохранение сил. Читай 🖤",
   "image": "/images/article-covers/how-to-manage-your-study.png",
   "published": "2019-12-02",

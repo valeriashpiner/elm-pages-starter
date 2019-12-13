@@ -2,7 +2,7 @@
 {
   "type": "blog",
   "author": "React Girl",
-  "title": "✨ Hello, world!",
+  "title": "✨Hello, world!",
   "description": "C вами на связи с французских земель Канады React Girl и вы в блоге unicorns&me. Этот блог - моё пространство, где я описываю, как я ставлю себе цели и достигаю их, а также это перенос и продолжение моего большого треда в твиттере о том, как я учу французский язык.",
   "image": "/images/article-covers/hello.png",
   "published": "2019-10-20",

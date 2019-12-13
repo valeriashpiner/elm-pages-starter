@@ -2,7 +2,7 @@
 {
   "type": "blog",
   "author": "React Girl",
-  "title": "✨ Spaced Repetition",
+  "title": "✨Spaced Repetition",
   "description": "Spaced Repetition - это мощный инструмент в изучении нового материала. Читайте дальше о том, что это за эффект и как с этим связан наш мозг.",
   "image": "/images/article-covers/spaced-repetition.png",
   "published": "2019-11-03",
