@@ -1,23 +1,20 @@
 module Index exposing (view)
 
 import Data.Author
-import Date
+import Date exposing (toRataDie)
 import Element exposing (Element)
-import Element.Background
 import Element.Border
 import Element.Font
 import Html.Attributes as Attr
 import Metadata exposing (Metadata)
 import Pages
 import Pages.PagePath as PagePath exposing (PagePath)
-import Pages.Platform exposing (Page)
 
 
--- flippedComparison a b =
---     case compare a b of
---       LT -> GT
---       EQ -> EQ
---       GT -> LT
+pageSorter : ( PagePath Pages.PathKey, Metadata.ArticleMetadata ) -> ( PagePath Pages.PathKey, Metadata.ArticleMetadata ) -> Order
+pageSorter ( _, a ) ( _, b ) =
+    compare (toRataDie a.published) (toRataDie b.published)
+
 
 view :
     List ( PagePath Pages.PathKey, Metadata )
@@ -25,14 +22,10 @@ view :
 view posts =
     Element.column [ Element.spacing 30 ]
         (posts
-            -- |> List.sortBy (\(p, meta) -> case meta of
-            --     Metadata.Article aMeta -> aMeta.published
-            --     _ -> p
-            --    )
             |> List.filterMap
                 (\( path, metadata ) ->
                     case metadata of
-                        Metadata.Page meta ->
+                        Metadata.Page _ ->
                             Nothing
 
                         Metadata.Author _ ->
@@ -48,6 +41,8 @@ view posts =
                         Metadata.BlogIndex ->
                             Nothing
                 )
+            |> List.sortWith pageSorter
+            |> List.reverse
             |> List.map postSummary
         )
 
@@ -92,6 +87,7 @@ articleIndex metadata =
         (postPreview metadata)
 
 
+readMoreLink : Element msg
 readMoreLink =
     Element.text "Continue reading >>"
         |> Element.el
