@@ -149,9 +149,9 @@ Et pour terminer, je présenterai ma conclusion final avant de passer au débat.
 🔸Аргументы и защита
 
 > Dans l’objectif de répondre à cette question je voudrais présenter mes arguments.
- Tout d’abord, [Argument] + [Explication].
- Deuxièmement, [Argument] + [Explication].
- Troisièmement,  [Argument] + [Explication].
+ > - Tout d’abord, [Argument] + [Explication].
+ > - Deuxièmement, [Argument] + [Explication].
+ > - Troisièmement,  [Argument] + [Explication].
 
 🔸 Личный опыт
 > Concernant mon experience personnelle...
