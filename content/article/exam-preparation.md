@@ -161,9 +161,8 @@ Et pour terminer, je présenterai ma conclusion final avant de passer au débat.
 🔸 Вывод
 
 > Enfin/En conclusion/Pour conclure, je pense que oui. 
-J’ai quand même présenté plus d’idées favorables que d’idées défavorables...
-Comme mon expérience personnelle est relativement positive/negative…
-J’ai terminé mon exposé, nous pouvons passer au débat et je suis prête à répondre à vos questions.
+> - J’ai quand même présenté plus d’idées favorables que d’idées défavorables... / Comme mon expérience personnelle est relativement positive/negative…
+> - J’ai terminé mon exposé, nous pouvons passer au débat et je suis prête à répondre à vos questions.
 
 Я советую заучить структуру и довести ёё до автоматизма. Даже если вам попадется очень неудачная тема одно только представление структуры займет, как минимум, 3 минуты и спасет вас от позора.
 
