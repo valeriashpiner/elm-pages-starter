@@ -13,13 +13,22 @@ import Pages.PagePath as PagePath exposing (PagePath)
 import Pages.Platform exposing (Page)
 
 
+-- flippedComparison a b =
+--     case compare a b of
+--       LT -> GT
+--       EQ -> EQ
+--       GT -> LT
+
 view :
     List ( PagePath Pages.PathKey, Metadata )
     -> Element msg
 view posts =
     Element.column [ Element.spacing 30 ]
         (posts
-            |> List.reverse
+            -- |> List.sortBy (\(p, meta) -> case meta of
+            --     Metadata.Article aMeta -> aMeta.published
+            --     _ -> p
+            --    )
             |> List.filterMap
                 (\( path, metadata ) ->
                     case metadata of

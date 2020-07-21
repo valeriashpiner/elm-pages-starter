@@ -76,6 +76,7 @@ application config =
 allPages : List (PagePath PathKey)
 allPages =
     [ (buildPage [ "article", "creative-way-to-learn" ])
+    , (buildPage [ "article", "exam-preparation" ])
     , (buildPage [ "article", "hello" ])
     , (buildPage [ "article", "how-to-manage-your-study" ])
     , (buildPage [ "article", "how-to-memorize-better" ])
@@ -86,6 +87,7 @@ allPages =
 pages =
     { article =
         { creativeWayToLearn = (buildPage [ "article", "creative-way-to-learn" ])
+        , examPreparation = (buildPage [ "article", "exam-preparation" ])
         , hello = (buildPage [ "article", "hello" ])
         , howToManageYourStudy = (buildPage [ "article", "how-to-manage-your-study" ])
         , howToMemorizeBetter = (buildPage [ "article", "how-to-memorize-better" ])
@@ -99,6 +101,7 @@ pages =
 images =
     { articleCovers =
         { creativeWayToLearn = (buildImage [ "article-covers", "creative-way-to-learn.png" ])
+        , examPreparation = (buildImage [ "article-covers", "exam-preparation.jpeg" ])
         , hello = (buildImage [ "article-covers", "hello.png" ])
         , howToManageYourStudy = (buildImage [ "article-covers", "how-to-manage-your-study.png" ])
         , howToMemorizeBetter = (buildImage [ "article-covers", "how-to-memorize-better.jpeg" ])
@@ -119,6 +122,7 @@ images =
 allImages : List (ImagePath PathKey)
 allImages =
     [(buildImage [ "article-covers", "creative-way-to-learn.png" ])
+    , (buildImage [ "article-covers", "exam-preparation.jpeg" ])
     , (buildImage [ "article-covers", "hello.png" ])
     , (buildImage [ "article-covers", "how-to-manage-your-study.png" ])
     , (buildImage [ "article-covers", "how-to-memorize-better.jpeg" ])
@@ -157,6 +161,12 @@ content =
     [ 
   ( ["article", "creative-way-to-learn"]
     , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨Creative way to learn","description":"Творческий подход и почему это важно.","image":"/images/article-covers/creative-way-to-learn.png","published":"2019-12-13"}
+""" , body = Nothing
+    , extension = "md"
+    } )
+  ,
+  ( ["article", "exam-preparation"]
+    , { frontMatter = """{"type":"blog","author":"React Girl","title":"✨Preparation to DELF!","description":"Как подготовиться к DELF и не умереть.","image":"/images/article-covers/exam-preparation.jpeg","published":"2020-07-21"}
 """ , body = Nothing
     , extension = "md"
     } )
